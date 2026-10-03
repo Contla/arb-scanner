@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "arb-scanner"
+version = "0.1.0"
+description = "Private sportsbook arbitrage scanner with Telegram alerts"
+requires-python = ">=3.12"
+dependencies = [
+    "playwright>=1.47",
+    "httpx>=0.27",
+    "rapidfuzz>=3.9",
+    "pydantic-settings>=2.4",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[tool.setuptools.packages.find]
+include = ["app*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

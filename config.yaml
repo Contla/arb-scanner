@@ -1,0 +1,16 @@
+bankroll_mxn: 2000
+min_roi: 0.02
+min_profit_mxn: 50
+verify_roi_above: 0.15   # still alerts, tagged VERIFICAR
+min_minutes_to_kickoff: 10
+match:
+  kickoff_tolerance_min: 15
+  name_score_min: 88
+sports: [soccer]
+markets: [1x2, moneyline, totals]
+books:   # optional per book: fee_pct: 0.0 (commission on winnings)
+  fake:     { enabled: false, interval_s: 60 }
+  caliente: { enabled: true,  interval_s: 60 }
+  codere:   { enabled: true,  interval_s: 60 }
+  stake:    { enabled: true,  interval_s: 60 }
+quiet_hours: null   # e.g. ["01:00", "07:00"]
