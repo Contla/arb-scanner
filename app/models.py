@@ -80,7 +80,9 @@ class Arb:
     line: float | None
     legs: list[Leg]
     roi: float
+    profit_mxn: float
     first_seen: datetime
     last_seen: datetime
     closed_at: datetime | None = None
     telegram_msg_id: int | None = None
+    misses: int = 0  # consecutive detection passes it was not found in

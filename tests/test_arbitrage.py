@@ -74,7 +74,7 @@ def test_big_arb_still_alerts_but_needs_verify():
     arb = find_arb(market("moneyline", {"home": {"a": 2.60}, "away": {"b": 2.60}}), BANKROLL)
     assert arb.roi == pytest.approx(0.30)
     assert should_alert(arb, MIN_ROI, MIN_PROFIT)
-    assert needs_verify(arb, VERIFY_ROI_ABOVE)
+    assert needs_verify(arb.roi, VERIFY_ROI_ABOVE)
 
 
 def test_fee_is_applied_before_filters():

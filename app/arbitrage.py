@@ -55,6 +55,6 @@ def should_alert(arb: ArbResult, min_roi: float, min_profit_mxn: float) -> bool:
     return arb.roi >= min_roi and arb.profit_mxn >= min_profit_mxn
 
 
-def needs_verify(arb: ArbResult, verify_roi_above: float) -> bool:
+def needs_verify(roi: float, verify_roi_above: float) -> bool:
     """Big arbs are often a wrong match or a palpable price: tag VERIFICAR, log as suspicious."""
-    return arb.roi > verify_roi_above
+    return roi > verify_roi_above
